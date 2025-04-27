@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watch Video - Bishavmind</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      font-size: 24px;
+    }
+    .video-container {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 800px;
+    }
+    iframe {
+      width: 100%;
+      height: 450px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 20px 0 10px;
+      color: #333;
+      text-align: center;
+    }
+    .description {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 20px;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .download-btn {
+      background-color: #ff5722;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 30px;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+
+<header>Bishavmind ??</header>
+
+<div class="video-container">
+  <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="title" id="videoTitle">Loading...</div>
+<div class="description" id="videoDescription">
+  Enjoy this motivational video and stay inspired! ??
+</div>
+
+<a id="downloadLink" class="download-btn" download>Download Video</a>
+
+<script>
+// Get video id and title from URL
+const urlParams = new URLSearchParams(window.location.search);
+const videoId = urlParams.get('id');
+const videoTitle = urlParams.get('title');
+
+// Set iframe src
+document.getElementById('videoFrame').src = `https://www.youtube.com/embed/${videoId}`;
+// Set title
+document.getElementById('videoTitle').innerText = decodeURIComponent(videoTitle);
+// Set download link
+document.getElementById('downloadLink').href = `https://www.y2mate.com/youtube/${videoId}`;
+</script>
+
+</body>
+</html>
